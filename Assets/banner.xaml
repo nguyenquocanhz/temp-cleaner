@@ -1,0 +1,24 @@
+<!-- Banner README (1280x400). Chèn logo.xaml vào chỗ LogoHost bằng tools/render-logo.ps1 -->
+<Border xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Width="1280" Height="400" CornerRadius="28">
+  <Border.Background>
+    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+      <GradientStop Color="#0B1220" Offset="0"/>
+      <GradientStop Color="#0F1B3A" Offset="0.6"/>
+      <GradientStop Color="#0B2B3A" Offset="1"/>
+    </LinearGradientBrush>
+  </Border.Background>
+  <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="90,0,0,0">
+    <ContentControl Name="LogoHost" Width="230" Height="230"/>
+    <StackPanel VerticalAlignment="Center" Margin="56,0,0,0">
+      <TextBlock FontFamily="Segoe UI" FontWeight="Bold" FontSize="104" Foreground="White">
+        <Run Text="Temp"/><Run Text="Cleaner" Foreground="#38BDF8"/>
+      </TextBlock>
+      <TextBlock FontFamily="Segoe UI" FontSize="34" Foreground="#CBD5E1" Margin="4,0,0,0"
+                 Text="Dọn file tạm · giải phóng ổ cứng Windows"/>
+      <TextBlock FontFamily="Segoe UI" FontSize="26" Foreground="#94A3B8" Margin="4,26,0,0">
+        <Run Text="By "/><Run Text="WrenEvil.tech" Foreground="#E2E8F0" FontWeight="SemiBold"/><Run Text=" &amp; "/><Run Text="nguyenquocanhz" Foreground="#E2E8F0" FontWeight="SemiBold"/><Run Text=" (nqatech)"/>
+      </TextBlock>
+    </StackPanel>
+  </StackPanel>
+</Border>

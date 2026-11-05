@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>TempCleaner</AssemblyName>
+    <RootNamespace>TempCleaner</RootNamespace>
+    <Product>Temp Cleaner</Product>
+    <Version>1.0.0</Version>
+    <Authors>WrenEvil.tech &amp; nguyenquocanhz (nqatech)</Authors>
+    <Company>WrenEvil.tech &amp; nqatech</Company>
+    <Copyright>© 2026 WrenEvil.tech &amp; nguyenquocanhz (nqatech)</Copyright>
+    <AssemblyTitle>Temp Cleaner - Dọn file tạm</AssemblyTitle>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+    <Resource Include="Assets\logo-256.png" />
+    <None Remove="Assets\*.xaml" />
+    <Page Remove="Assets\*.xaml" />
+  </ItemGroup>
+
+</Project>

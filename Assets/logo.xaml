@@ -1,0 +1,33 @@
+<!-- Logo Temp Cleaner (nguồn vector, 256x256). Render ra PNG/ICO bằng tools/render-logo.ps1 -->
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <Canvas Width="256" Height="256">
+    <!-- Nền bo góc, gradient xanh -->
+    <Rectangle Width="256" Height="256" RadiusX="58" RadiusY="58">
+      <Rectangle.Fill>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+          <GradientStop Color="#1D4ED8" Offset="0"/>
+          <GradientStop Color="#2563EB" Offset="0.45"/>
+          <GradientStop Color="#06B6D4" Offset="1"/>
+        </LinearGradientBrush>
+      </Rectangle.Fill>
+    </Rectangle>
+    <!-- Ánh sáng nhẹ phía trên -->
+    <Path Data="M 58,0 H 198 A 58,58 0 0 1 256,58 V 96 C 180,70 90,70 0,110 V 58 A 58,58 0 0 1 58,0 Z" Opacity="0.10" Fill="White"/>
+
+    <!-- Quai thùng rác -->
+    <Path Data="M 100,82 V 72 Q 100,62 110,62 H 126 Q 136,62 136,72 V 82"
+          Stroke="White" StrokeThickness="11" StrokeLineJoin="Round"/>
+    <!-- Nắp -->
+    <Rectangle Canvas.Left="56" Canvas.Top="80" Width="124" Height="20" RadiusX="10" RadiusY="10" Fill="White"/>
+    <!-- Thân -->
+    <Path Data="M 70,110 H 166 L 157.5,192 Q 156.5,204 145,204 H 91 Q 79.5,204 78.5,192 Z" Fill="White"/>
+    <!-- Khe -->
+    <Rectangle Canvas.Left="94"  Canvas.Top="128" Width="12" Height="56" RadiusX="6" RadiusY="6" Fill="#3B82F6"/>
+    <Rectangle Canvas.Left="112" Canvas.Top="128" Width="12" Height="56" RadiusX="6" RadiusY="6" Fill="#3B82F6"/>
+    <Rectangle Canvas.Left="130" Canvas.Top="128" Width="12" Height="56" RadiusX="6" RadiusY="6" Fill="#3B82F6"/>
+
+    <!-- Lấp lánh: ổ đĩa sạch -->
+    <Path Fill="White" Data="M 204,34 Q 207,61 232,64 Q 207,67 204,94 Q 201,67 176,64 Q 201,61 204,34 Z"/>
+    <Path Fill="White" Opacity="0.85" Data="M 212,108 Q 213.5,120 226,122 Q 213.5,124 212,136 Q 210.5,124 198,122 Q 210.5,120 212,108 Z"/>
+  </Canvas>
+</Viewbox>
