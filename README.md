@@ -49,3 +49,7 @@ powershell -STA -ExecutionPolicy Bypass -File tools\render-logo.ps1
 ## Tác giả
 
 **WrenEvil.tech** & **nguyenquocanhz (nqatech)**
+
+## Giấy phép
+
+[MIT](LICENSE)
