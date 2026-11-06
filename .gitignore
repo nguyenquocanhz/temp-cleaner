@@ -6,3 +6,6 @@ obj/
 
 # Ảnh quét file lớn chứa danh sách file cá nhân trên máy
 screenshots/file-lon-*.png
+
+publish/
+dist/

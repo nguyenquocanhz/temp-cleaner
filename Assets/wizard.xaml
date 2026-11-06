@@ -1,0 +1,24 @@
+<!-- Ảnh bên trái wizard cài đặt (328x628 = 2x cỡ 164x314 của Inno Setup). LogoHost được chèn logo.xaml -->
+<Border xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Width="328" Height="628">
+  <Border.Background>
+    <LinearGradientBrush StartPoint="0,0" EndPoint="0.4,1">
+      <GradientStop Color="#0B1220" Offset="0"/>
+      <GradientStop Color="#0F1B3A" Offset="0.6"/>
+      <GradientStop Color="#0B2B3A" Offset="1"/>
+    </LinearGradientBrush>
+  </Border.Background>
+  <Grid>
+    <StackPanel VerticalAlignment="Center" Margin="0,0,0,90">
+      <ContentControl Name="LogoHost" Width="170" Height="170" HorizontalAlignment="Center"/>
+      <TextBlock FontFamily="Segoe UI" FontWeight="Bold" FontSize="44" Foreground="White"
+                 HorizontalAlignment="Center" Margin="0,26,0,0"><Run Text="Temp"/><Run Text="Cleaner" Foreground="#38BDF8"/></TextBlock>
+      <TextBlock FontFamily="Segoe UI" FontSize="19" Foreground="#CBD5E1" HorizontalAlignment="Center"
+                 Margin="0,6,0,0" Text="Dọn file tạm cho Windows"/>
+    </StackPanel>
+    <StackPanel VerticalAlignment="Bottom" Margin="0,0,0,36">
+      <TextBlock FontFamily="Segoe UI" FontSize="16" Foreground="#94A3B8" HorizontalAlignment="Center" Text="By"/>
+      <TextBlock FontFamily="Segoe UI" FontSize="18" FontWeight="SemiBold" Foreground="#E2E8F0" HorizontalAlignment="Center" Text="WrenEvil.tech"/>
+      <TextBlock FontFamily="Segoe UI" FontSize="18" FontWeight="SemiBold" Foreground="#E2E8F0" HorizontalAlignment="Center"><Run Text="nguyenquocanhz"/><Run Text=" (nqatech)" FontWeight="Normal" Foreground="#94A3B8"/></TextBlock>
+    </StackPanel>
+  </Grid>
+</Border>

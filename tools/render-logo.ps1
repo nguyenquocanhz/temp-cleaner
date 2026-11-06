@@ -1,4 +1,4 @@
-# Render Assets/logo.xaml và Assets/banner.xaml ra PNG + app.ico.
+﻿# Render Assets/logo.xaml và Assets/banner.xaml ra PNG + app.ico.
 # Chạy: powershell -STA -ExecutionPolicy Bypass -File tools\render-logo.ps1
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName PresentationCore, PresentationFramework, WindowsBase
@@ -51,4 +51,23 @@ $banner = Load-Xaml 'banner.xaml'
 $banner.FindName('LogoHost').Content = Load-Xaml 'logo.xaml'
 [IO.File]::WriteAllBytes((Join-Path $assets 'banner.png'), (Render-Png $banner 1280 400))
 
-"Exported: app.ico ($($sizes -join ', ') px), logo-256.png, logo-512.png, banner.png"
+# Ảnh wizard cho Inno Setup (BMP 24-bit, nền đặc)
+function Save-Bmp($element, [int]$w, [int]$h, [string]$name) {
+    $png = Render-Png $element $w $h
+    $src = [Windows.Media.Imaging.BitmapDecoder]::Create([IO.MemoryStream]::new($png),
+        [Windows.Media.Imaging.BitmapCreateOptions]::None, [Windows.Media.Imaging.BitmapCacheOption]::OnLoad).Frames[0]
+    $bgr = [Windows.Media.Imaging.FormatConvertedBitmap]::new($src, [Windows.Media.PixelFormats]::Bgr24, $null, 0)
+    $enc = [Windows.Media.Imaging.BmpBitmapEncoder]::new()
+    $enc.Frames.Add([Windows.Media.Imaging.BitmapFrame]::Create($bgr))
+    $fs = [IO.File]::Create((Join-Path $assets $name)); $enc.Save($fs); $fs.Close()
+}
+$wizard = Load-Xaml 'wizard.xaml'
+$wizard.FindName('LogoHost').Content = Load-Xaml 'logo.xaml'
+Save-Bmp $wizard 328 628 'wizard-large.bmp'
+$small = [Windows.Controls.Border]::new()
+$small.Background = [Windows.Media.Brushes]::White
+$small.Padding = [Windows.Thickness]::new(6)
+$small.Child = Load-Xaml 'logo.xaml'
+Save-Bmp $small 110 110 'wizard-small.bmp'
+
+"Exported: wizard-large.bmp, wizard-small.bmp, app.ico ($($sizes -join ', ') px), logo-256.png, logo-512.png, banner.png"
